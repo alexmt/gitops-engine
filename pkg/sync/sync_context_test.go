@@ -60,6 +60,7 @@ func newTestSyncCtx(opts ...SyncOpt) *syncContext {
 		return nil
 	}
 	sc.kubectl = &kubetest.MockKubectlCmd{}
+	sc.resourceOps = &kubetest.MockKubectlCmd{}
 	for _, opt := range opts {
 		opt(&sc)
 	}
